@@ -9,8 +9,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
@@ -27,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.D
 
     private RecyclerView mRecyclerView;
     private FloatingActionButton mAddContactButton;
-    private List<Contact> list = new ArrayList<>();
+    private List<Item> list = new ArrayList<>();
     private ContactsAdapter adapter;
 
     @Override
@@ -38,9 +36,8 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.D
             String name = data.getStringExtra(Intent.EXTRA_USER);
             String email = data.getStringExtra(Intent.EXTRA_EMAIL);
             String phone = data.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
-            Uri uri = Uri.parse(data.getStringExtra(Intent.EXTRA_ORIGINATING_URI));
 
-            list.add(new Contact(name, email, phone, uri));
+            list.add(new Item(name, email, phone));
             adapter.notifyDataSetChanged();
         }
     }
@@ -55,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.D
 
         mAddContactButton = findViewById(R.id.fab);
         mAddContactButton.setOnClickListener(v -> {
-            Intent i = new Intent(this, AddContactActivity.class);
+            Intent i = new Intent(this, AddItemActivity.class);
             startActivityForResult(i, ADD_CONTACT_REQUEST_CODE);
         });
 

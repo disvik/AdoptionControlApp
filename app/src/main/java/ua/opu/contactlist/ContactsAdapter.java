@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -20,14 +19,14 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
     }
 
     private final LayoutInflater inflater;
-    private final List<Contact> list;
+    private final List<Item> list;
     private DeleteItemListener listener;
 
 
     private static final int EMPTY_LIST_TYPE = 0;
     private static final int NON_EMPTY_LIST_TYPE = 1;
 
-    public ContactsAdapter(Context context, List<Contact> users, DeleteItemListener listener) {
+    public ContactsAdapter(Context context, List<Item> users, DeleteItemListener listener) {
         this.inflater = LayoutInflater.from(context);
         this.list = users;
         this.listener = listener;
@@ -56,12 +55,11 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
         if (getItemViewType(position) == EMPTY_LIST_TYPE)
             return;
 
-        Contact contact = list.get(position);
+        Item contact = list.get(position);
 
-        holder.image.setImageURI(contact.getUri());
         holder.name.setText(contact.getName());
-        holder.email.setText(contact.getEmail());
-        holder.phone.setText(contact.getPhone());
+        holder.email.setText(contact.getLimit());
+        holder.phone.setText(contact.getAmount());
     }
 
     @Override
@@ -76,7 +74,6 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
 
 
     static class ContactHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        ImageView image;
         TextView name;
         TextView email;
         TextView phone;
@@ -87,7 +84,6 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
         public ContactHolder(@NonNull View itemView, DeleteItemListener listener) {
             super(itemView);
 
-            image = itemView.findViewById(R.id.contact_image);
             name = itemView.findViewById(R.id.name);
             email = itemView.findViewById(R.id.email);
             phone = itemView.findViewById(R.id.phone);

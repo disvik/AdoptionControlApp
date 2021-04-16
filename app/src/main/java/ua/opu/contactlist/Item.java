@@ -1,17 +1,15 @@
 package ua.opu.contactlist;
 
-import android.net.Uri;
-
-public class Contact {
+public class Item {
 
     private String name;
-    private String email;
-    private String phone;
+    private String limit;
+    private String amount;
 
-    public Contact(String name, String email, String phone) {
+    public Item(String name, String limit, String amount) {
         this.name = name;
-        this.email = email;
-        this.phone = phone;
+        this.limit = limit;
+        this.amount = amount;
     }
 
     public String getName() {
@@ -22,20 +20,20 @@ public class Contact {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLimit() {
+        return limit;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLimit(String limit) {
+        this.limit = limit;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getAmount() {
+        return amount;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setAmount(String amount) {
+        this.amount = amount;
     }
 
 }

@@ -22,7 +22,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class AddContactActivity extends AppCompatActivity {
+public class AddItemActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class AddContactActivity extends AppCompatActivity {
         setWindow();
 
         EditText nameEditText = findViewById(R.id.name_et);
-        EditText EmailEditText = findViewById(R.id.email_et);
+        EditText limitEditText = findViewById(R.id.email_et);
         EditText PhoneEditText = findViewById(R.id.phone_et);
 
         Button cancelButton = findViewById(R.id.button_cancel);
@@ -42,7 +42,7 @@ public class AddContactActivity extends AppCompatActivity {
         addContactButton.setOnClickListener(v -> {
 
             String name = nameEditText.getText().toString();
-            String email = EmailEditText.getText().toString();
+            String email = limitEditText.getText().toString();
             String phone = PhoneEditText.getText().toString();
 
             Intent i = new Intent();
