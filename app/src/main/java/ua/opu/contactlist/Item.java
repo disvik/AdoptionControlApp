@@ -7,13 +7,11 @@ public class Contact {
     private String name;
     private String email;
     private String phone;
-    private Uri uri;
 
-    public Contact(String name, String email, String phone, Uri uri) {
+    public Contact(String name, String email, String phone) {
         this.name = name;
         this.email = email;
         this.phone = phone;
-        this.uri = uri;
     }
 
     public String getName() {
@@ -40,11 +38,4 @@ public class Contact {
         this.phone = phone;
     }
 
-    public Uri getUri() {
-        return uri;
-    }
-
-    public void setUri(Uri uri) {
-        this.uri = uri;
-    }
 }
