@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.ContactHolder> {
+public class ReportAdapter extends RecyclerView.Adapter<ReportAdapter.ExchangeHolder> {
 
     public interface DeleteItemListener {
         void onDeleteItem(int position);
@@ -26,7 +26,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
     private static final int EMPTY_LIST_TYPE = 0;
     private static final int NON_EMPTY_LIST_TYPE = 1;
 
-    public ContactsAdapter(Context context, List<Item> users, DeleteItemListener listener) {
+    public ReportAdapter(Context context, List<Item> users, DeleteItemListener listener) {
         this.inflater = LayoutInflater.from(context);
         this.list = users;
         this.listener = listener;
@@ -34,32 +34,32 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
 
     @NonNull
     @Override
-    public ContactHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ExchangeHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view;
 
         if (viewType == EMPTY_LIST_TYPE) {
             view = inflater.inflate(R.layout.list_no_items, parent, false);
             view.setTag(EMPTY_LIST_TYPE);
         } else {
-            view = inflater.inflate(R.layout.list_contact, parent, false);
+            view = inflater.inflate(R.layout.list_reports, parent, false);
             view.setTag(NON_EMPTY_LIST_TYPE);
         }
 
-        return new ContactHolder(view, listener);
+        return new ExchangeHolder(view, listener);
     }
 
 
     @Override
-    public void onBindViewHolder(@NonNull ContactHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ExchangeHolder holder, int position) {
 
         if (getItemViewType(position) == EMPTY_LIST_TYPE)
             return;
 
-        Item contact = list.get(position);
+        Item item = list.get(position);
 
-        holder.name.setText(contact.getName());
-        holder.email.setText(contact.getLimit());
-        holder.phone.setText(contact.getAmount());
+        holder.data.setText(item.getData());
+        holder.weight.setText(item.getWeight());
+        holder.height.setText(item.getHeight());
     }
 
     @Override
@@ -73,20 +73,20 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.Contac
     }
 
 
-    static class ContactHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView name;
-        TextView email;
-        TextView phone;
+    static class ExchangeHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        TextView data;
+        TextView weight;
+        TextView height;
 
         ImageButton deleteButton;
         DeleteItemListener listener;
 
-        public ContactHolder(@NonNull View itemView, DeleteItemListener listener) {
+        public ExchangeHolder(@NonNull View itemView, DeleteItemListener listener) {
             super(itemView);
 
-            name = itemView.findViewById(R.id.name);
-            email = itemView.findViewById(R.id.email);
-            phone = itemView.findViewById(R.id.phone);
+            data = itemView.findViewById(R.id.name);
+            weight = itemView.findViewById(R.id.limit);
+            height = itemView.findViewById(R.id.amount);
 
             deleteButton = itemView.findViewById(R.id.clearButton);
             this.listener = listener;

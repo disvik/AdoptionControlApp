@@ -26,12 +26,42 @@
         android:fitsSystemWindows="true"
         tools:context=".MainActivity">
 
+        <ImageView
+            android:id="@+id/image_1"
+            android:layout_width="34dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/string_floatingaction"
+            app:layout_constraintBottom_toTopOf="@+id/tab_layout"
+            app:layout_constraintEnd_toStartOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.509"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.103"
+            app:srcCompat="@drawable/arrow" />
+
+        <ImageView
+            android:id="@+id/image_2"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="19dp"
+            android:layout_marginBottom="26dp"
+            android:contentDescription="@string/floatingaction"
+            app:layout_constraintBottom_toTopOf="@+id/tab_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.522"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/search"
+            app:startIconTint="@color/white" />
+
         <TextView
             android:id="@+id/textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_width="233dp"
+            android:layout_height="48dp"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:layout_marginEnd="16dp"
             android:fontFamily="@font/montserrat_bold"
             android:text="@string/contacts_title"
@@ -39,22 +69,21 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             android:textColor="@color/title_color"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="376dp"
+            android:layout_height="472dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="0.454"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintTop_toBottomOf="@+id/tab_layout"
+            app:layout_constraintVertical_bias="0.148" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/home"
@@ -137,6 +166,59 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.989"
             app:srcCompat="@drawable/account" />
+
+        <TableLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="381dp"
+            android:layout_height="27dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="69dp"
+            app:layout_constraintBottom_toTopOf="@+id/fab"
+            app:layout_constraintEnd_toEndOf="@+id/textView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.039" >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/tabtext_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/tab_left"
+                    android:textColor="@color/tab_item" />
+
+                <TextView
+                    android:id="@+id/tabtext_2"
+                    android:layout_width="80dp"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginEnd="23dp"
+                    android:background="@drawable/layout_bg"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/tab_center"
+                    android:textAlignment="center"
+                    android:textColor="@color/tab_center" />
+
+                <TextView
+                    android:id="@+id/tabtext_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="22dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginEnd="26dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/montserrat_bold"
+                    android:text="@string/tab_right"
+                    android:textColor="@color/tab_item" />
+            </TableRow>
+
+        </TableLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

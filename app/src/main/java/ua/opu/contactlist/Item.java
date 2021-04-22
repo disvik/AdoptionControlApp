@@ -2,38 +2,38 @@ package ua.opu.contactlist;
 
 public class Item {
 
-    private String name;
-    private String limit;
-    private String amount;
+    private String data;
+    private String weight;
+    private String height;
 
-    public Item(String name, String limit, String amount) {
-        this.name = name;
-        this.limit = limit;
-        this.amount = amount;
+    public Item(String data, String weight, String height) {
+        this.data = data;
+        this.weight = weight;
+        this.height = height;
     }
 
-    public String getName() {
-        return name;
+    public String getData() {
+        return data;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setData(String data) {
+        this.data = data;
     }
 
-    public String getLimit() {
-        return limit;
+    public String getWeight() {
+        return weight;
     }
 
-    public void setLimit(String limit) {
-        this.limit = limit;
+    public void setWeight(String weight) {
+        this.weight = weight;
     }
 
-    public String getAmount() {
-        return amount;
+    public String getHeight() {
+        return height;
     }
 
-    public void setAmount(String amount) {
-        this.amount = amount;
+    public void setHeight(String height) {
+        this.height = height;
     }
 
 }

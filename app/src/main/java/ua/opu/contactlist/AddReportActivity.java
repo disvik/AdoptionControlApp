@@ -1,38 +1,28 @@
 package ua.opu.contactlist;
 
-import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.MediaStore;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-
-public class AddItemActivity extends AppCompatActivity {
+public class AddReportActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_contact);
+        setContentView(R.layout.activity_add_item);
         setWindow();
 
-        EditText nameEditText = findViewById(R.id.name_et);
-        EditText limitEditText = findViewById(R.id.email_et);
-        EditText PhoneEditText = findViewById(R.id.phone_et);
+        EditText dataEditText = findViewById(R.id.name_et);
+        EditText weightEditText = findViewById(R.id.limit_et);
+        EditText heightEditText = findViewById(R.id.amount_et);
 
         Button cancelButton = findViewById(R.id.button_cancel);
         cancelButton.setOnClickListener(v -> onBackPressed());
@@ -41,14 +31,14 @@ public class AddItemActivity extends AppCompatActivity {
         Button addContactButton = findViewById(R.id.button_add);
         addContactButton.setOnClickListener(v -> {
 
-            String name = nameEditText.getText().toString();
-            String email = limitEditText.getText().toString();
-            String phone = PhoneEditText.getText().toString();
+            String data = dataEditText.getText().toString();
+            String weight = weightEditText.getText().toString();
+            String height = heightEditText.getText().toString();
 
             Intent i = new Intent();
-            i.putExtra(Intent.EXTRA_USER, name);
-            i.putExtra(Intent.EXTRA_EMAIL, email);
-            i.putExtra(Intent.EXTRA_PHONE_NUMBER, phone);
+            i.putExtra(Intent.EXTRA_USER, data);
+            i.putExtra(Intent.EXTRA_EMAIL, weight);
+            i.putExtra(Intent.EXTRA_PHONE_NUMBER, height);
 
             setResult(RESULT_OK, i);
             finish();

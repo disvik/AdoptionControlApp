@@ -2,5 +2,5 @@
 <resources>
     <string name="textview_name_placeholder">Name placeholder</string>
     <string name="textview_email_placeholder">Email placeholder</string>
-    <string name="textview_phone_placeholder">Phone placeholder</string>
+    <string name="textview_currency_placeholder">Phone placeholder</string>
 </resources>

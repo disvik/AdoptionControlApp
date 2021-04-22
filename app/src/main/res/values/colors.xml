@@ -6,9 +6,12 @@
     <color name="secondaryVariant">#FFE63746</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="title_color">#FFFFFFFF</color>
+    <color name="title_color">#000F63</color>
     <color name="list_color">#FFFFFFFF</color>
-    <color name="activity_background">#12121d</color>
-    <color name="contact_card_background">#3C3C57</color>
+    <color name="activity_background">#3BE9FF</color>
+    <color name="exchange_card_background">#0C7481</color>
     <color name="background_button">#FFFFFFFF</color>
+    <color name="tab_item">#B8B8B8</color>
+    <color name="tab_center">#FFFFFFFF</color>
+    <color name="tab_center_background">#2884CD</color>
 </resources>

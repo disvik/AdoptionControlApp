@@ -19,14 +19,14 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements ContactsAdapter.DeleteItemListener {
+public class MainActivity extends AppCompatActivity implements ReportAdapter.DeleteItemListener {
 
     private static final int ADD_CONTACT_REQUEST_CODE = 5556;
 
     private RecyclerView mRecyclerView;
     private FloatingActionButton mAddContactButton;
     private List<Item> list = new ArrayList<>();
-    private ContactsAdapter adapter;
+    private ReportAdapter adapter;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
@@ -34,10 +34,10 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.D
 
         if (requestCode == ADD_CONTACT_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             String name = data.getStringExtra(Intent.EXTRA_USER);
-            String email = data.getStringExtra(Intent.EXTRA_EMAIL);
-            String phone = data.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
+            String email = data.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
+            String amount = data.getStringExtra(Intent.EXTRA_PHONE_NUMBER);
 
-            list.add(new Item(name, email, phone));
+            list.add(new Item(name, email, amount));
             adapter.notifyDataSetChanged();
         }
     }
@@ -52,13 +52,13 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.D
 
         mAddContactButton = findViewById(R.id.fab);
         mAddContactButton.setOnClickListener(v -> {
-            Intent i = new Intent(this, AddItemActivity.class);
+            Intent i = new Intent(this, AddReportActivity.class);
             startActivityForResult(i, ADD_CONTACT_REQUEST_CODE);
         });
 
         mRecyclerView = findViewById(R.id.list);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new ContactsAdapter(getApplicationContext(), list, this);
+        adapter = new ReportAdapter(getApplicationContext(), list, this);
         mRecyclerView.setAdapter(adapter);
     }
 

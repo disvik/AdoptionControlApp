@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5"
-    tools:context=".AddItemActivity">
+    tools:context=".AddReportActivity">
 
     <Button
         android:id="@+id/button_add"
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginBottom="26dp"
-        android:backgroundTint="@color/contact_card_background"
+        android:backgroundTint="@color/exchange_card_background"
         android:text="@string/button_add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/button_cancel"
@@ -28,7 +28,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
         android:layout_marginEnd="36dp"
-        android:backgroundTint="@color/contact_card_background"
+        android:backgroundTint="@color/exchange_card_background"
         android:text="@string/button_cancel"
         app:layout_constraintBottom_toBottomOf="@+id/button_add"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,7 +45,7 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/et_name"
         app:startIconDrawable="@drawable/plus_box"
-        app:startIconTint="@color/contact_card_background"
+        app:startIconTint="@color/exchange_card_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView">
@@ -71,10 +71,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/name_til"
         app:startIconDrawable="@drawable/clock_time_four_outline"
-        app:startIconTint="@color/contact_card_background">
+        app:startIconTint="@color/exchange_card_background">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email_et"
+            android:id="@+id/limit_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress|textAutoComplete" />
@@ -94,10 +94,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_til"
         app:startIconDrawable="@drawable/chart_line"
-        app:startIconTint="@color/contact_card_background">
+        app:startIconTint="@color/exchange_card_background">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/phone_et"
+            android:id="@+id/amount_et"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:imeOptions="actionDone"
